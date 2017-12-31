@@ -6,7 +6,7 @@ app.get("/", function(req, res) {
 })
 
 app.get("/speak/:animal", function(req, res) {
-	var animal = req.params.animal;
+	var animal = req.params.animal.toLowerCase();
 	var speak = {
 		pig: "Oink!",
 		cow: "Moo!", 
@@ -28,7 +28,7 @@ app.get("/repeat/:word/:num", function(req, res) {
 })
 
 app.get("*", function(res, req) {
-	res.send("Sorry, page not found... What are you doing with your life?");
+	res.send("Sorry, page not found...");
 })
 
 app.listen(3000, function() {
